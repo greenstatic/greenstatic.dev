@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main>
+  <div class="mb-4">
+    <h1>{{ .Title }}</h1>
+  </div>
+
+  <div class="content">
+    {{ range .Paginator.Pages }}
+      {{- partial "misc/post_card_entry.html" . -}}
+    {{ end }}
+
+    {{- partial "misc/pagination.html" . -}}
+  </div>
+
+</main>
+{{ end }}

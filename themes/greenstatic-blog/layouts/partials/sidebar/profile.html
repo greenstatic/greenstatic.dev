@@ -1,0 +1,37 @@
+<section>
+  <div class="text-center">
+    <img class="img-fluid" src="{{ .Site.Data.site.image | relURL }}" style="max-width: 70%; border-radius:50%;">
+  </div>
+  
+  <section class="mt-2 text-center">
+    <div style="font-size:1.3rem; font-weight: 500;">
+      {{ .Site.Data.site.author }}
+    </div>
+    
+    <div class="text-muted" style="font-size:0.95rem;">
+      {{ .Site.Data.site.trade }}
+    </div>
+
+    <div class="mt-2" style="font-size: 0.83rem;">
+      {{ .Site.Data.site.description }}
+    </div>
+  </section>
+
+  <section class="mt-3">
+    <div>
+      <i class="fab fa-github"></i>
+      <a class="link-no-color" href="https://github.com/{{ .Site.Data.site.github }}">{{ .Site.Data.site.github }}</a>
+    </div>
+    
+    <div>
+      <i class="fa fa-link"></i>
+      <a class="link-no-color" href="{{ .Site.Data.site.website }}">{{ .Site.Data.site.website }}</a>
+    </div>
+
+    <div>
+      <i class="far fa-sticky-note"></i> 
+      Favorite XKCD: <a class="link-no-color" href="https://xkcd.com/{{ .Site.Data.site.favoriteXkcd }}/">#{{ .Site.Data.site.favoriteXkcd }}</a>
+    </div>
+  </section>
+
+</section>

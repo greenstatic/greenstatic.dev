@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article role="main">
+
+  <div class="mb-4">
+    <h1>{{ .Title }}</h1>
+
+    <div>
+      <div class="mb-2">
+        {{ range .Params.categories }}
+          <a href="{{ "/categories/" | relURL }}{{ . | urlize }}" class="badge badge-primary font-sm">{{ . }}</a>
+        {{ end }}
+
+        {{ range .Params.tags }}
+          <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="badge badge-secondary font-sm">{{ . }}</a>
+        {{ end }}
+      </div>
+
+      {{ if .Date }}
+        <div class="text-muted">{{ .Date | dateFormat "January 2, 2006" }} </div>
+      {{ end }}
+    </div>
+
+  </div>
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

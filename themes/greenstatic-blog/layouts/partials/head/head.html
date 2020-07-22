@@ -1,0 +1,18 @@
+<title>{{ if not .IsHome }} {{ .Title }} | {{ end}} {{ .Site.Title }}</title>
+
+{{ partial "head/metadata.html" . }}
+
+{{ partial "head/opengraph.html" . }}
+{{ partial "head/twitter_cards.html" . }}
+
+{{ "<!-- Hugo info -->" | safeHTML }}
+{{ printf "<!-- Build Date: %s -->" (now.Format "2006-01-02T15:04:05Z07:00") | safeHTML }}
+{{ hugo.Generator }}
+
+{{ partial "head/styles.html" . }}
+
+{{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+{{ "<!-- Created by: greenstatic -->" | safeHTML }}

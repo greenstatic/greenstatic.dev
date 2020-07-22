@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <main>
+    <h1 class="mb-4">Latest Posts</h1>
+    <div class="content">
+      {{ range (.Paginate (sort (where $.Site.RegularPages "Type" "post") "Params.date" "desc")).Pages }}
+        
+        {{- partial "misc/post_card_entry.html" . -}}
+    
+      {{ end }}
+    
+    
+      {{- partial "misc/pagination.html" . -}}
+      
+    </div>
+  </main>
+{{ end }}

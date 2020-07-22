@@ -1,0 +1,6 @@
+<blockquote class="blockquote">
+  <p class="mb-0">{{ .Inner }}</p>
+  {{ if isset .Params "source" }}
+    <footer class="blockquote-footer">{{ .Get "source" }}</footer>
+  {{ end }}
+</blockquote>

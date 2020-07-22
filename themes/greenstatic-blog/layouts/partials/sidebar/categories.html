@@ -1,0 +1,15 @@
+<!-- Categories Widget -->
+<section>
+  <div class="h6">
+    Categories
+  </div>
+  <ul class="list-unstyled mb-0">
+
+    {{ range .Site.Taxonomies.categories }}
+      <li>
+        <a class="badge badge-primary" href="{{ .Page.Permalink | relURL }}">{{ .Page.Name }}</a> <small>({{ len . }})</small>
+      </li>
+    {{ end }}
+
+  </ul>
+</section>

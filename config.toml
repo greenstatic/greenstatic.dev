@@ -1,0 +1,9 @@
+baseURL = "https://greenstatic.dev"
+languageCode = "en-us"
+title = "greenstatic.dev"
+theme = "greenstatic-blog"
+
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
