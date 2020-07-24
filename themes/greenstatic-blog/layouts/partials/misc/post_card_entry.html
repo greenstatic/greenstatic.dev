@@ -1,11 +1,15 @@
 <!-- Post -->
 <div class="card mb-4">
   <div class="card-body">
-    <h2 class="card-title h4">
+    <h2 class="card-title h4 mb-0">
       <a class="link-no-color link-no-color-hover" href="{{ .Permalink | relURL }}">{{ .Title }}</a>
     </h2>
 
-    <div class="mb-2 ">
+    <div class="text-muted latest-post-font">
+      {{.Date.Format "January 2, 2006"}}
+    </div>
+
+    <div>
       {{ range .Params.categories }}
         <a href="{{ "/categories/" | relURL }}{{ . | urlize }}" class="badge badge-primary font-sm">{{ . }}</a>
       {{ end }}
@@ -15,10 +19,6 @@
       {{ end }}
     </div>
 
-    <div class="text-muted latest-post-font">
-      {{.Date.Format "January 2, 2006"}}
-    </div>
-
-    <p class="card-text latest-post-font">{{ .Summary }}</p>
+    <p class="card-text latest-post-font pt-2">{{ .Summary }}</p>
   </div>
 </div>

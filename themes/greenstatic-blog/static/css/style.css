@@ -128,8 +128,8 @@
     }
 }
 
-.content p {
-  padding: 0.3em;
+.content img {
+  max-width: 100%;
 }
 
 /* START SECTION #1

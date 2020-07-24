@@ -1,5 +1,5 @@
 resources/
 public/
 tmp/
-
+.idea/
 .DS_Store
