@@ -28,7 +28,7 @@ $ ceph config set client.rgw.<rgw_realm>.<rgw_zone> rgw_frontends "beast port=80
 3. Restart the RGW, e.g. `ceph orch restart rgw`
 
 
-[^1]: With the cephadm instalaltion, this will most probably be your bootstrapping server (also probably your monitor node).
+[^1]: With the cephadm installation, this will most probably be your bootstrapping server (also probably your monitor node).
 Gaining access to the `ceph` CLI tool is usually done by running `cephadm shell` which drops you into a Docker/Podman container 
 with the `ceph` CLI tool available. The container actually has a host filesystem bind mount `/var/lib/ceph/<CEPH_ID>/home:/root`.
 Copying your RGW SSL/TLS certificate on the bootstrap machine in the aforementioned dir will make the certificate available in
