@@ -86,9 +86,9 @@ get an error when running the tool. `ykman` comes bundled with YubiKey Manager o
 `/Applications/YubiKey\ Manager.app/Contents/MacOS`.
 4. Import your chain certificates into Retired Key Management slots (82-95):
    ```shell
-   $ ./ykman piv import-certificate 82 chain_cert_root.pem -v
-   $ ./ykman piv import-certificate 83 chain_cert_intermediate.pem -v
-   $ ./ykman piv import-certificate 84 chain_cert_intermerdiate_2.pem -v
+   $ ./ykman piv import-certificate 82 chain_cert_root.pem
+   $ ./ykman piv import-certificate 83 chain_cert_intermediate.pem
+   $ ./ykman piv import-certificate 84 chain_cert_intermerdiate_2.pem
    # ... add as many certificates as you need
    # Slot numbers are in hex! 82, ..., 88, 89, 8a, 8b, 8c, 8d, 8e, 8f, 90, 91, ... , 95
    ```
