@@ -9,6 +9,10 @@ tags:
 - space invaders
 ---
 
+**Edit 1 (March 27, 2021):** Added LJU_01, LJU_08, LJU_21, LJU_22, LJU_26, LJU_27, LJU_41 and copycat section.
+
+---
+
 Together with Charisa we spotted in September 2021 a couple of figures constructed from tiles on various buildings (often around major intersections) scattered around Ljubljana, Slovenia.
 
 ![A couple of Space Invaders located around major intersections in Ljubljana](/static-posts/2021/space-invaders-ljubljana-1.jpeg)
@@ -42,14 +46,14 @@ Google Maps: <strong><a href="https://www.google.com/maps/d/u/0/viewer?mid=1RF_Z
 
 | ID     | Short Description | Address                           | Coordinates             | Note    |
 | ------ | ----------------- | --------------------------------- | ----------------------- | ------- |
-| LJU_01 |  |  |  | TBD |
+| LJU_01 | Inside [MGLC](http://www.mglc-lj.si/) | Pod turnom 3, 1000 Ljubljana | 46.054692, 14.492948 |  |
 | LJU_02 |  |  |  | TBD |
 | LJU_03 |  |  |  | TBD |
 | LJU_04 |  |  |  | TBD |
 | LJU_05 |  |  |  | TBD |
 | LJU_06 |  |  |  | TBD |
 | LJU_07 |  |  |  | TBD |
-| LJU_08 |  |  |  | TBD |
+| [LJU_08](/static-posts/2021/space-invaders/LJU_08.jpeg) | Tivoli Castle | Pod turnom 3, 1000 Ljubljana | 46.0547389, 14.4930985 | |
 | LJU_09 |  | Trubarjeva cesta 7, 1000 Ljubljana | 46.052049, 14.507620 | |
 | LJU_10 | Accross the street - entrance pillar | Metelkova ulica 9, 1000 Ljubljana | 46.056450, 14.515853 | |
 | LJU_11 |  | Tabor 4, 1000 Ljubljana | 46.053780, 14.516726 | |
@@ -62,13 +66,13 @@ Google Maps: <strong><a href="https://www.google.com/maps/d/u/0/viewer?mid=1RF_Z
 | LJU_18 |  | Masarykova cesta 15, 1000 Ljubljana | 46.057629, 14.517164 | |
 | LJU_19 | Metelkova entrance pillar | Masarykova cesta 15, 1000 Ljubljana | 46.057522, 14.517069 | |
 | LJU_20 |  |  |  | TBD |
-| LJU_21 |  |  |  | TBD |
-| LJU_22 |  |  |  | TBD |
+| [LJU_21](/static-posts/2021/space-invaders/LJU_21.jpeg) |  | Zaloška cesta 16, 1000 Ljubljana | 46.054564, 14.530124 | |
+| [LJU_22](/static-posts/2021/space-invaders/LJU_22.jpeg) |  | Zaloška cesta 55, 1000 Ljubljana | 46.056235, 14.534499 | |
 | [LJU_23](/static-posts/2021/space-invaders/LJU_23.jpeg) | Kino Šiška | Trg prekomorskih brigad 3, 1000 Ljubljana | 46.069094, 14.489014 | |
 | [LJU_24](/static-posts/2021/space-invaders/LJU_24.jpeg) | Eipprova ulica & Trnovski pristan | Eipprova ulica 1a, 1000 Ljubljana | 46.043592, 14.505499 | |
 | [LJU_25](/static-posts/2021/space-invaders/LJU_25.jpeg) | Hradeckega Bridge | Hradeckega most, 1000 Ljubljana | 46.044411, 14.505312 | |
-| LJU_26 |  |  |  | TBD |
-| LJU_27 |  |  |  | TBD |
+| [LJU_26](/static-posts/2021/space-invaders/LJU_26.jpeg) |  | Privoz 17, 1000 Ljubljana | 46.040860, 14.510934 | |
+| [LJU_27](/static-posts/2021/space-invaders/LJU_27.jpeg) |  | Gruberjevo nabrežje 14, 1000 Ljubljana | 46.0411191, 14.5127851 | |
 | [LJU_28](/static-posts/2021/space-invaders/LJU_28.jpeg) | Bar Šiška | Celovška cesta 103, 1000 Ljubljana | 46.067452, 14.491255 | |
 | [LJU_29](/static-posts/2021/space-invaders/LJU_29.jpeg) |  | Poljanska cesta 30a, 1000 Ljubljana | 46.048558, 14.519460 | |
 | [LJU_30](/static-posts/2021/space-invaders/LJU_30.jpeg) |  | Tržaška c. 2, 1000 Ljubljana | 46.047448, 14.494757 | |
@@ -82,9 +86,34 @@ Google Maps: <strong><a href="https://www.google.com/maps/d/u/0/viewer?mid=1RF_Z
 | [LJU_38](/static-posts/2021/space-invaders/LJU_38.jpeg) | Argentinski park | Štefanova ulica 8, 1000 Ljubljana | 46.053985, 14.502993 | |
 | LJU_39 | Trg Ajdovščina | Ajdovščina 1, 1000 Ljubljana | 46.053881, 14.504499 | |
 | [LJU_40](/static-posts/2021/space-invaders/LJU_40.jpeg) |  | Dalmatinova ulica 1, 1000 Ljubljana | 46.054348, 14.504701 | |
-| LJU_41 |  |  |  | TBD |
+| [LJU_41](/static-posts/2021/space-invaders/LJU_41.jpeg) | Botanical garden in Tivoli of University of Ljubljana | Cesta 27. aprila 2, 1000 Ljubljana | 46.051861, 14.493746 | |
 | [LJU_42](/static-posts/2021/space-invaders/LJU_42.jpeg) |  | Gornji trg 44, 1000 Ljubljana | 46.045117, 14.509605 | |
+<!-- 
 | LJU_X1 |  |  |  | TBD |
 | LJU_X2 |  |  |  | TBD |
-| LJU_X3 |  |  |  | TBD |
+| LJU_X3 |  |  |  | TBD | 
+-->
 
+<h2 class="h3">Beware of Copycats!</h2>
+
+On your quest to find all the Space Invaders, you might run into what appears as heart shaped invaders.
+But don't let looks fool you!
+Upon scanning them with the Flash Invaders app, you will be greeted with a message saying "Not an invader".
+To our best knowledge these seem to be Space Invader copycats. 
+If you have any information regarding these heart shaped wannabe invaders please contact me (contact email on [my website](https://krmelj.xyz/)).
+
+<div class="col-md-8">
+    <figure>
+        <img class="img-fluid" src="/static-posts/2021/space-invaders/copycat_1.jpeg" />
+        <figcaption>
+            Near Fishmarket Foorbridge (Ribja Brv) - Hribarjevo nabrežje 19, 1000 Ljubljana 
+        </figcaption>
+    </figure>
+    <br>
+    <figure>
+        <img class="img-fluid" src="/static-posts/2021/space-invaders/copycat_2.jpeg" />
+        <figcaption>
+            Cafe Romeo - Stari trg 6, 1000 Ljubljana
+        </figcaption>
+    </figure>
+</div>
