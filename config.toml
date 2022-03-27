@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "greenstatic.dev"
 theme = "greenstatic-blog"
 
+enableRobotsTXT = true
 
 [taxonomies]
   category = "categories"
