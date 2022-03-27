@@ -1,230 +1,67 @@
-<!doctype html><html><title> YubiKey PIV Certificate Chain Guide | greenstatic.dev</title>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name=description content>
-<meta name=keywords content>
-<meta property="og:url" content="https://greenstatic.dev/posts/2020/yubikey-piv-certificate-chain-guide/">
-<meta property="og:title" content="YubiKey PIV Certificate Chain Guide">
-<meta property="og:description" content="How to import your entire certificate chain into your YubiKey so you can verify signatures successfully.">
-<meta property="og:type" content="article">
-<meta name=generator content="Hugo 0.92.2">
-<link rel=stylesheet href=/dist/bootstrap-4.5.0-dist/css/bootstrap.min.css>
-<link rel=stylesheet href=/css/style.css>
-<link rel=stylesheet href=/dist/fontawesome-free-5.14.0-web/css/all.min.css>
-<link rel=stylesheet href=https://voh.nipwd.com/greenstatic.dev.css>
-<link rel="shortcut icon" href=/images/favicon.ico type=image/x-icon>
-<link rel=icon href=/images/favicon.ico type=image/x-icon>
-<body class="d-flex flex-column min-vh-100">
-<div class="container mt-5" style=flex:1>
-<div class=row>
-<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 order-2 order-md-1 order-lg-1 order-xl-1">
-<header><div class="text-center mt-3 mb-4">
-<section>
-<div class=h5>
-<a class=link-no-color href=/>
-<i class="fas fa-home"></i>
+<!doctype html><html><title>YubiKey PIV Certificate Chain Guide | greenstatic.dev</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content><meta name=keywords content><meta property="og:url" content="https://greenstatic.dev/posts/2020/yubikey-piv-certificate-chain-guide/"><meta property="og:title" content="YubiKey PIV Certificate Chain Guide"><meta property="og:description" content="How to import your entire certificate chain into your YubiKey so you can verify signatures successfully."><meta property="og:type" content="article"><meta name=generator content="Hugo 0.95.0"><link rel=stylesheet href=/dist/bootstrap-4.5.0-dist/css/bootstrap.min.css><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/dist/fontawesome-free-5.14.0-web/css/all.min.css><link rel=stylesheet href=https://voh.nipwd.com/greenstatic.dev.css><link rel="shortcut icon" href=/images/favicon.ico type=image/x-icon><link rel=icon href=/images/favicon.ico type=image/x-icon><body class="d-flex flex-column min-vh-100"><div class="container mt-5" style=flex:1><div class=row><div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 order-2 order-md-1 order-lg-1 order-xl-1"><header><div class="text-center mt-3 mb-4"><section><div class=h5><a class=link-no-color href=/><i class="fas fa-home"></i>
 &nbsp;
-greenstatic.dev
-</a>
-</div>
-</section>
-</div>
-<section>
-<div class=text-center>
-<img class=img-fluid src=/misc/profile.jpg style=max-width:70%;border-radius:50%>
-</div>
-<section class="mt-2 text-center">
-<div style=font-size:1.3rem;font-weight:500>
-Gregor Krmelj
-</div>
-<div class=text-muted style=font-size:.95rem>
-Software Engineer
-</div>
-<div class=mt-2 style=font-size:.83rem>
-An engineer's blog about computers, software, horror IT stories, coding solutions and everything in between.
-</div>
-</section>
-<section class=mt-3>
-<div>
-<i class="fab fa-github"></i>
+greenstatic.dev</a></div></section></div><section><div class=text-center><img class=img-fluid src=/misc/profile.jpg style=max-width:70%;border-radius:50%></div><section class="mt-2 text-center"><div style=font-size:1.3rem;font-weight:500>Gregor Krmelj</div><div class=text-muted style=font-size:.95rem>Software Engineer</div><div class=mt-2 style=font-size:.83rem>An engineer's blog about computers, software, horror IT stories, coding solutions and everything in between.</div></section><section class=mt-3><div><i class="fab fa-github"></i>
 &nbsp;
-<a class=link-no-color href=https://github.com/greenstatic>greenstatic</a>
-</div>
-<div>
-<i class="fa fa-link"></i>
+<a class=link-no-color href=https://github.com/greenstatic>greenstatic</a></div><div><i class="fa fa-link"></i>
 &nbsp;
-<a class=link-no-color href=https://krmelj.xyz>https://krmelj.xyz</a>
-</div>
-<div>
-<i class="far fa-sticky-note"></i>
+<a class=link-no-color href=https://krmelj.xyz>https://krmelj.xyz</a></div><div><i class="far fa-sticky-note"></i>
 &nbsp;
-Favorite XKCD: <a class=link-no-color href=https://xkcd.com/2166/>#2166</a>
-</div>
-</section>
-</section>
-<hr>
-<section>
-<div class=h6>
-Categories
-</div>
-<ul class="list-unstyled mb-0">
-<li>
-<a class="badge badge-primary" href=/categories/cloud/>cloud</a> <small>(1)</small>
-</li>
-<li>
-<a class="badge badge-primary" href=/categories/infrastructure/>infrastructure</a> <small>(1)</small>
-</li>
-<li>
-<a class="badge badge-primary" href=/categories/other/>other</a> <small>(1)</small>
-</li>
-<li>
-<a class="badge badge-primary" href=/categories/security/>security</a> <small>(1)</small>
-</li>
-<li>
-<a class="badge badge-primary" href=/categories/snippet/>snippet</a> <small>(1)</small>
-</li>
-</ul>
-</section>
-<hr>
-<section>
-<div>
-<i class="fa fa-rss"></i>
+Favorite XKCD: <a class=link-no-color href=https://xkcd.com/2166/>#2166</a></div></section></section><hr><section><div class=h6>Categories</div><ul class="list-unstyled mb-0"><li><a class="badge badge-primary" href=/categories/cloud/>cloud</a> <small>(1)</small></li><li><a class="badge badge-primary" href=/categories/infrastructure/>infrastructure</a> <small>(1)</small></li><li><a class="badge badge-primary" href=/categories/other/>other</a> <small>(1)</small></li><li><a class="badge badge-primary" href=/categories/security/>security</a> <small>(1)</small></li><li><a class="badge badge-primary" href=/categories/snippet/>snippet</a> <small>(1)</small></li></ul></section><hr><section><div><i class="fa fa-rss"></i>
 &nbsp;
-<a class=link-no-color href=/index.xml>RSS Feed</a>
-</div>
-</section>
-</header>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 order-1 order-md-2 order-lg-2 order-xl-2">
-<div class="d-md-none d-lg-none d-xl-none mb-4"><section>
-<div class=h5>
-<a class=link-no-color href=/>
-<i class="fas fa-home"></i>
+<a class=link-no-color href=/index.xml>RSS Feed</a></div></section></header></div><div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 order-1 order-md-2 order-lg-2 order-xl-2"><div class="d-md-none d-lg-none d-xl-none mb-4"><section><div class=h5><a class=link-no-color href=/><i class="fas fa-home"></i>
 &nbsp;
-greenstatic.dev
-</a>
-</div>
-</section>An engineer's blog about computers, software, horror IT stories, coding solutions and everything in between.
-</div>
-<article role=main>
-<div class=mb-4>
-<h1>YubiKey PIV Certificate Chain Guide</h1>
-<div>
-<div class=mb-2>
-<a href=/categories/security class="badge badge-primary font-sm">security</a>
+greenstatic.dev</a></div></section>An engineer's blog about computers, software, horror IT stories, coding solutions and everything in between.</div><article role=main><div class=mb-4><h1>YubiKey PIV Certificate Chain Guide</h1><div><div class=mb-2><a href=/categories/security class="badge badge-primary font-sm">security</a>
 <a href=/tags/yubikey class="badge badge-secondary font-sm">yubikey</a>
 <a href=/tags/pki class="badge badge-secondary font-sm">pki</a>
-<a href=/tags/x.509 class="badge badge-secondary font-sm">x.509</a>
-</div>
-<div class=text-muted>July 24, 2020 </div>
-</div>
-</div>
-<div class=content>
-<p>So you finally got your new fancy YubiKey.
+<a href=/tags/x.509 class="badge badge-secondary font-sm">x.509</a></div><div class=text-muted>July 24, 2020</div></div></div><div class=content><p>So you finally got your new fancy YubiKey.
 Hurray!!! 🎉
 You know it&rsquo;s going to improve your security and you can finally get rid
 of that little voice that keeps you awake in the middle of the night.
 You know, because your keys are on your computer (althrough encrypted, hopefully) but as a
 software engineer you run so much &ldquo;random GitHub&rdquo; code that you are starting to get very anxious
-at all the different ways malicious users can pwn you.</p>
-<p>You visit Yubico, navigate to the documentation page and are blasted with acronyms that you don&rsquo;t understand.
+at all the different ways malicious users can pwn you.</p><p>You visit Yubico, navigate to the documentation page and are blasted with acronyms that you don&rsquo;t understand.
 You then decide to follow a guide or two, but it&rsquo;s missing stuff.
 It&rsquo;s explaining things but not guiding you how to solve concrete problems.
-Simple questions like how many keys can I store become confusing.</p>
-<p>You stand there perplexed.
+Simple questions like how many keys can I store become confusing.</p><p>You stand there perplexed.
 This can&rsquo;t be, you must not be getting something, this shouldn&rsquo;t be so hard.
 Rest assured, you arn&rsquo;t the only one.
 As a <a href=https://github.com/Yubico/yubico-piv-tool/issues/153#issuecomment-407483215>GitHub issue comment</a>
-on the yubico-piv-tool repository nicely puts it:</p>
-<p><img src=/static-posts/2020/yubikey_in_a_nutshell.png alt="YubiKey in a nutshell"></p>
-<p>So, how do I import my X.509 certificate including the entire certificate chain and
+on the yubico-piv-tool repository nicely puts it:</p><p><img src=/static-posts/2020/yubikey_in_a_nutshell.png alt="YubiKey in a nutshell"></p><p>So, how do I import my X.509 certificate including the entire certificate chain and
 private key so I can use my certificate entirely on my YubiKey and verify signatures as well?
-Well, let&rsquo;s get started!</p>
-<p>I have come to the following conclusions for <strong>my use case which is importing my <a href=https://www.si-trust.gov.si/en/>qualified digital certificate issued by
+Well, let&rsquo;s get started!</p><p>I have come to the following conclusions for <strong>my use case which is importing my <a href=https://www.si-trust.gov.si/en/>qualified digital certificate issued by
 my government</a></strong> for the purpose of digitally signing documents and logging into
 government services.
-I own a <strong>YubiKey 5C</strong> device for which this guide is written for, but should work on other YubiKey devices that support PIV.</p>
-<h2 id=requirements>Requirements</h2>
-<ul>
-<li>A YubiKey that supports PIV (e.g. YubiKey 5C)</li>
-<li><a href=https://www.yubico.com/products/services-software/download/yubikey-manager/>YubiKey Manager</a> installed</li>
-<li><code>ykman</code> (usually bundled with YubiKey Manager)</li>
-</ul>
-<h2 id=a-bit-of-background>A Bit of Background</h2>
-<p>As you are probably aware of YubiKey has <a href=https://developers.yubico.com/PIV/Introduction/Certificate_slots.html>certificate slots</a>.
-These follow specification <a href=https://csrc.nist.gov/publications/detail/sp/800-73/4/final>NIST 800-73-4: <em>Interfaces for Personal Identity Verification – Part 1: PIV Card Application Namespace, Data Model and Representation</em></a>.</p>
-<p>What this means is that different slots act differently during private key operations, such as always requiring the PIN
+I own a <strong>YubiKey 5C</strong> device for which this guide is written for, but should work on other YubiKey devices that support PIV.</p><h2 id=requirements>Requirements</h2><ul><li>A YubiKey that supports PIV (e.g. YubiKey 5C)</li><li><a href=https://www.yubico.com/products/services-software/download/yubikey-manager/>YubiKey Manager</a> installed</li><li><code>ykman</code> (usually bundled with YubiKey Manager)</li></ul><h2 id=a-bit-of-background>A Bit of Background</h2><p>As you are probably aware of YubiKey has <a href=https://developers.yubico.com/PIV/Introduction/Certificate_slots.html>certificate slots</a>.
+These follow specification <a href=https://csrc.nist.gov/publications/detail/sp/800-73/4/final>NIST 800-73-4: <em>Interfaces for Personal Identity Verification – Part 1: PIV Card Application Namespace, Data Model and Representation</em></a>.</p><p>What this means is that different slots act differently during private key operations, such as always requiring the PIN
 (i.e. Slot 9c: Digital Signature).
 One certificate slot can contain only one certificate along with the corresponding private key.
 But our digital certificate can contain the entire chain (all the way to the root certificate).
 Even though our <code>.p12</code> file contains the entire chain, when we import it into one of the certificate slots, YubiKey
 Manager doesn&rsquo;t warn us about anything.
 In the background what it does is take the private key and the corresponding certificate and import it into the
-certificate slot discarding any other certificates.</p>
-<p>The workaround is to import each certificate from the chain into it&rsquo;s own certificate slot.
+certificate slot discarding any other certificates.</p><p>The workaround is to import each certificate from the chain into it&rsquo;s own certificate slot.
 Now since we only hold the private key to our certificate and not to the other certificates in the chain it doesn&rsquo;t matter
-in which certificate slot we import it since no private key operations will be conducted using those certificates.</p>
-<h3 id=certificate-slot-organization>Certificate Slot Organization</h3>
-<p>In my use case I imported my certificate (and private key) into slot 9a (PIV Authentication), you may import it into
+in which certificate slot we import it since no private key operations will be conducted using those certificates.</p><h3 id=certificate-slot-organization>Certificate Slot Organization</h3><p>In my use case I imported my certificate (and private key) into slot 9a (PIV Authentication), you may import it into
 whichever slot you like.
 But you will soon see that via the GUI YubiKey Manager displays only 4 slots (9a, 9c, 9d and 9e).
 Does this mean you can only have 4 certificates in the entire chain?
 No!
 You can import the certificate chain certificates into the Retired Key Management slots (82-95 on YubiKey 4 & 5, a total
 of 20 slots - the slot numbers are in hex)
-but these slots are only accessible via the CLI and not the GUI.</p>
-<p>So in other words, <strong>it is better to configure this using the CLI since you will still have the GUI-displayed slots available
-for future use</strong>.</p>
-<h2 id=how-to-guide>How To Guide</h2>
-<ol>
-<li>Have ready all certificates that make the chain or if present in the <code>.p12</code> file, extract the certificates<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> into
-separate files.</li>
-<li>Insert your YubiKey into your computer, open YubiKey Manager, under Applications select PIV. Configure your PIN&rsquo;s
-(if not already). Select <em>Configure Certificates</em> and import your certificate (and private key) into your desired slot.</li>
-<li>Open the terminal and <code>cd</code> into the dir that contains <code>ykman</code> - on macOS this is very important since otherwise you
+but these slots are only accessible via the CLI and not the GUI.</p><p>So in other words, <strong>it is better to configure this using the CLI since you will still have the GUI-displayed slots available
+for future use</strong>.</p><h2 id=how-to-guide>How To Guide</h2><ol><li>Have ready all certificates that make the chain or if present in the <code>.p12</code> file, extract the certificates<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> into
+separate files.</li><li>Insert your YubiKey into your computer, open YubiKey Manager, under Applications select PIV. Configure your PIN&rsquo;s
+(if not already). Select <em>Configure Certificates</em> and import your certificate (and private key) into your desired slot.</li><li>Open the terminal and <code>cd</code> into the dir that contains <code>ykman</code> - on macOS this is very important since otherwise you
 get an error when running the tool. <code>ykman</code> comes bundled with YubiKey Manager on macOS and is available in the dir:
-<code>/Applications/YubiKey\ Manager.app/Contents/MacOS</code>.</li>
-<li>Import your chain certificates into Retired Key Management slots (82-95):
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ ./ykman piv import-certificate <span style=color:#ae81ff>82</span> chain_cert_root.pem
-$ ./ykman piv import-certificate <span style=color:#ae81ff>83</span> chain_cert_intermediate.pem
-$ ./ykman piv import-certificate <span style=color:#ae81ff>84</span> chain_cert_intermerdiate_2.pem
-<span style=color:#75715e># ... add as many certificates as you need</span>
-<span style=color:#75715e># Slot numbers are in hex! 82, ..., 88, 89, 8a, 8b, 8c, 8d, 8e, 8f, 90, 91, ... , 95</span>
-</code></pre></div></li>
-<li>Plug out your Yubikey from your computer and give it a try.</li>
-</ol>
-<section class=footnotes role=doc-endnotes>
-<hr>
-<ol>
-<li id=fn:1 role=doc-endnote>
-<p>This is one way of viewing all certificates that are emedded in a <code>.p12</code> file:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ openssl pkcs12 -in &lt;my_certificate.p12&gt; -out &lt;tmp.pem&gt;
-$ openssl x509 -in &lt;tmp.pem&gt; -noout -text
-</code></pre></div>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></li>
-</ol>
-</section>
-</div>
-</article>
-</div>
-</div>
-</div>
-<div>
-<footer class="mt-5 bg-dark">
-<div class="d-flex justify-content-center p-3">
-<span class="text-muted mx-4">
-Created by: <a class=text-muted href=https://krmelj.xyz>greenstatic</a>
-</span>
-<span class=text-muted>
-Copyright &copy;
-<script type=text/javascript>document.write((new Date).getFullYear())</script>
-<noscript>2020</noscript>
-</span>
-</div>
-</footer>
-</div>
-<script src=/dist/jquery-3.5.1.slim.min.js></script>
+<code>/Applications/YubiKey\ Manager.app/Contents/MacOS</code>.</li><li>Import your chain certificates into Retired Key Management slots (82-95):<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ ./ykman piv import-certificate <span style=color:#ae81ff>82</span> chain_cert_root.pem
+</span></span><span style=display:flex><span>$ ./ykman piv import-certificate <span style=color:#ae81ff>83</span> chain_cert_intermediate.pem
+</span></span><span style=display:flex><span>$ ./ykman piv import-certificate <span style=color:#ae81ff>84</span> chain_cert_intermerdiate_2.pem
+</span></span><span style=display:flex><span><span style=color:#75715e># ... add as many certificates as you need</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Slot numbers are in hex! 82, ..., 88, 89, 8a, 8b, 8c, 8d, 8e, 8f, 90, 91, ... , 95</span>
+</span></span></code></pre></div></li><li>Plug out your Yubikey from your computer and give it a try.</li></ol><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p>This is one way of viewing all certificates that are emedded in a <code>.p12</code> file:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ openssl pkcs12 -in &lt;my_certificate.p12&gt; -out &lt;tmp.pem&gt;
+</span></span><span style=display:flex><span>$ openssl x509 -in &lt;tmp.pem&gt; -noout -text
+</span></span></code></pre></div>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></li></ol></section></div></article></div></div></div><div><footer class="mt-5 bg-dark"><div class="d-flex justify-content-center p-3"><span class="text-muted mx-4">Created by: <a class=text-muted href=https://krmelj.xyz>greenstatic</a></span>
+<span class=text-muted>Copyright &copy;
+<script type=text/javascript>document.write((new Date).getFullYear())</script><noscript>2020</noscript></span></div></footer></div><script src=/dist/jquery-3.5.1.slim.min.js></script>
 <script src=/dist/bootstrap-4.5.0-dist/js/bootstrap.min.js></script>
-<script src=/js/script.js></script>
-</body>
-</html>
+<script src=/js/script.js></script></body></html>
