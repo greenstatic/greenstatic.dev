@@ -16,7 +16,15 @@
       </div>
 
       {{ if .Date }}
-        <div class="text-muted">{{ .Date | dateFormat "January 2, 2006" }} </div>
+        <div class="text-muted">
+          {{ if eq .Date .Lastmod }}
+            {{.Date.Format "January 2, 2006"}}
+          {{ else }}
+            Last updated: {{.Lastmod.Format "January 2, 2006"}}
+            <br>
+            <small>Originally published: {{.Date.Format "January 2, 2006"}}</small>
+          {{ end }}
+        </div>
       {{ end }}
     </div>
 

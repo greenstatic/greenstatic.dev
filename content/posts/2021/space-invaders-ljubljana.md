@@ -1,12 +1,12 @@
 ---
 title: "Space Invaders Ljubljana, Slovenia"
 date: 2021-03-13T14:23:25+02:00
+lastmod: 2021-03-27T10:00:00+02:00
 type: post
 summary: Locations of Space Invaders scattered around Ljubljana, Slovenia.
-categories:
-- other
 tags:
 - space invaders
+- treasure hunt
 ---
 
 **Edit 1 (March 27, 2021):** Added LJU_01, LJU_08, LJU_21, LJU_22, LJU_26, LJU_27, LJU_41 and copycat section.
