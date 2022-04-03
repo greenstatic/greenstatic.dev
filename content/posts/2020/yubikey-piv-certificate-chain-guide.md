@@ -4,7 +4,7 @@ date: 2020-07-24T11:53:00+02:00
 type: post
 summary: How to import your entire certificate chain into your YubiKey so you can verify signatures successfully. 
 categories:
-- security
+- Security
 tags:
 - yubikey
 - pki

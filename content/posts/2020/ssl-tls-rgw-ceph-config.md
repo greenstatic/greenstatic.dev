@@ -4,9 +4,9 @@ date: 2020-07-23T01:23:25+02:00
 type: post
 summary: Setting up SSL/TLS on my RADOS Gateway (RGW) Ceph Octopus cluster was a PITA, here's how I did it!
 categories:
-- cloud
-- infrastructure
-- snippet
+- Cloud
+- Infrastructure
+- Snippets
 tags:
 - ceph
 - storage

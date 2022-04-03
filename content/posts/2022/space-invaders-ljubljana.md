@@ -4,6 +4,8 @@ date: 2022-03-13T14:23:25+02:00
 lastmod: 2022-03-27T10:00:00+02:00
 type: post
 summary: Locations of Space Invaders scattered around Ljubljana, Slovenia.
+categories:
+- Other
 tags:
 - space invaders
 - treasure hunt
