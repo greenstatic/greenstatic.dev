@@ -19,7 +19,7 @@ tags:
 
 Together with Charisa we spotted in August 2021 a couple of figures constructed from tiles on various buildings (often around major intersections) scattered around Ljubljana, Slovenia.
 
-![A couple of Space Invaders located around major intersections in Ljubljana](/static-posts/2021/space-invaders-ljubljana-1.jpeg)
+![A couple of Space Invaders located around major intersections in Ljubljana](/static-posts/2022/space-invaders-ljubljana-1.jpeg)
 
 It took many weeks of searching various search terms:
 * Figurice ob križiščih Ljubljana
