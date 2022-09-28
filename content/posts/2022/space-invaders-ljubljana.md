@@ -1,7 +1,7 @@
 ---
 title: "Space Invaders Ljubljana, Slovenia"
 date: 2022-03-13T14:23:25+02:00
-lastmod: 2022-03-27T10:00:00+02:00
+lastmod: 2022-09-28T14:00:00+02:00
 type: post
 summary: Locations of Space Invaders scattered around Ljubljana, Slovenia.
 categories:
@@ -12,6 +12,8 @@ tags:
 ---
 
 **Edit 1 (March 27, 2022):** Added LJU_01, LJU_08, LJU_21, LJU_22, LJU_26, LJU_27, LJU_41 and copycat section.
+
+**Edit 2 (September 28, 2022):** @AEGE spotted another copycat (near LJU_16).
 
 ---
 
@@ -44,7 +46,7 @@ Our list is currently not complete but will get updated as we track the remainin
 Google Maps: <strong><a href="https://www.google.com/maps/d/u/0/viewer?mid=1RF_ZM0-N0ZWY2SOE5LH1LaHYUj1WrDi0&hl=en&ll=46.0563444721545%2C14.504237&z=15">Map of Space Invaders in Ljubljana</a></strong>
 </p>
 
-<h2 class="h4">List of Space Invaders in Ljubljana</h3>
+<h2 id="space-invader-list" class="h4">List of Space Invaders in Ljubljana</h3>
 
 | ID     | Short Description | Address                           | Coordinates             | Note    |
 | ------ | ----------------- | --------------------------------- | ----------------------- | ------- |
@@ -116,6 +118,15 @@ If you have any information regarding these heart shaped wannabe invaders please
         <img class="img-fluid" src="/static-posts/2022/space-invaders/copycat_2.jpeg" />
         <figcaption>
             Cafe Romeo - Stari trg 6, 1000 Ljubljana
+        </figcaption>
+    </figure>
+    <br>
+    <figure>
+        <img class="img-fluid" src="/static-posts/2022/space-invaders/copycat_3.jpeg" />
+        <figcaption>
+            Near <a href="#space-invader-list">LJU_16</a> - Cankarjevo nabrežje 13, 1000 Ljubljana
+            <br>
+            Credit: @AEGE
         </figcaption>
     </figure>
 </div>
