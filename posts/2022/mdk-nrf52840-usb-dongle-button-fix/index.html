@@ -1,0 +1,61 @@
+<!doctype html><html><title>Makerdiary nRF52840 MDK USB Dongle fix reset button | greenstatic.dev</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content><meta name=keywords content><meta property="og:url" content="https://greenstatic.dev/posts/2022/mdk-nrf52840-usb-dongle-button-fix/"><meta property="og:title" content="Makerdiary nRF52840 MDK USB Dongle fix reset button"><meta property="og:description" content="Fixing broken reset button on Makerdiary nRF52840 MDK USB Dongle"><meta property="og:type" content="article"><meta name=generator content="Hugo 0.105.0"><link rel=stylesheet href=/dist/bootstrap-4.5.0-dist/css/bootstrap.min.css><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/dist/fontawesome-free-5.14.0-web/css/all.min.css><link rel=stylesheet href=https://voh.nipwd.com/greenstatic.dev.css><link rel="shortcut icon" href=/images/favicon.ico type=image/x-icon><link rel=icon href=/images/favicon.ico type=image/x-icon><link rel=canonical href=https://greenstatic.dev/posts/2022/mdk-nrf52840-usb-dongle-button-fix/><body class="d-flex flex-column min-vh-100"><div class="container mt-5" style=flex:1><div class=row><div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 order-2 order-md-1 order-lg-1 order-xl-1"><header><div class="text-center mt-3 mb-4"><section><div class=h5><a class=link-no-color href=/><i class="fas fa-home"></i>
+&nbsp;
+greenstatic.dev</a></div></section></div><section><div class=text-center><img class=img-fluid src=/misc/profile.jpg style=max-width:70%;border-radius:50%></div><section class="mt-2 text-center"><div style=font-size:1.3rem;font-weight:500>Gregor Krmelj</div><div class=text-muted style=font-size:.95rem>Software Engineer</div><div class=mt-2 style=font-size:.83rem>An engineer's blog about computers, software, horror IT stories, coding solutions and everything in between.</div></section><section class=mt-3><div><i class="fab fa-github"></i>
+&nbsp;
+<a class=link-no-color href=https://github.com/greenstatic>greenstatic</a></div><div><i class="fa fa-link"></i>
+&nbsp;
+<a class=link-no-color href=https://krmelj.xyz>https://krmelj.xyz</a></div><div><i class="far fa-sticky-note"></i>
+&nbsp;
+Favorite XKCD: <a class=link-no-color href=https://xkcd.com/2166/>#2166</a></div></section></section><hr><section><div class=h6>Categories</div><ul class="list-unstyled mb-0"><li><a class="badge badge-primary" href=/categories/cloud/>Cloud</a> <small>(1)</small></li><li><a class="badge badge-primary" href=/categories/hardware/>Hardware</a> <small>(1)</small></li><li><a class="badge badge-primary" href=/categories/infrastructure/>Infrastructure</a> <small>(1)</small></li><li><a class="badge badge-primary" href=/categories/other/>Other</a> <small>(1)</small></li><li><a class="badge badge-primary" href=/categories/security/>Security</a> <small>(1)</small></li><li><a class="badge badge-primary" href=/categories/snippets/>Snippets</a> <small>(1)</small></li></ul></section><hr><section><div><i class="fa fa-rss"></i>
+&nbsp;
+<a class=link-no-color href=/index.xml>RSS Feed</a></div></section></header></div><div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 order-1 order-md-2 order-lg-2 order-xl-2"><div class="d-md-none d-lg-none d-xl-none mb-4"><section><div class=h5><a class=link-no-color href=/><i class="fas fa-home"></i>
+&nbsp;
+greenstatic.dev</a></div></section>An engineer's blog about computers, software, horror IT stories, coding solutions and everything in between.</div><article role=main><div class=mb-4><h1>Makerdiary nRF52840 MDK USB Dongle fix reset button</h1><div><div class=mb-2><a href=/categories/hardware class="badge badge-primary font-sm">Hardware</a>
+<a href=/tags/nrf52840 class="badge badge-secondary font-sm">nRF52840</a>
+<a href=/tags/hardware-development class="badge badge-secondary font-sm">hardware development</a>
+<a href=/tags/devkit class="badge badge-secondary font-sm">devkit</a></div><div class=text-muted>November 9, 2022</div></div></div><div class=content><h2 id=background>Background</h2><p>I was playing around with a Makerdiary nRF52840 MDK USB Dongle and somehow managed to soft-brick
+the dongle by flashing an application that overwrote the reset button pin, meaning I couldn&rsquo;t enter
+the bootloader to flash a new application onto the dongle.
+To be honest I don&rsquo;t even know what was the application since the dongle was sitting in my drawer
+for so long after a long break from playing around with it.</p><p>The dongle either contains (1) Open Bootloader or (2) UF2 Bootloader as per <a href=https://wiki.makerdiary.com/nrf52840-mdk-usb-dongle/programming/>documentation</a>.
+It is advised if your dongle was shipped with Open Bootloader (older dongle versions) to upgrade to the UF2 bootloader due to it&rsquo;s
+easy to use feature of appearing as a flash drive and loading new applications onto the flash drive when in DFU mode.
+In order to get the dongle into DFU mode, one must hold the RESET/USER button (see image 2) while inserting the device into the USB slot.
+If successful, the onboard LED will blink red twice and then a solid green. You are now in DFU mode and if using the UF2
+bootloader a new (emulated) flash drive will appear on your computer which accepts <code>.uf2</code> format application images - details
+in the <a href=https://wiki.makerdiary.com/nrf52840-mdk-usb-dongle/programming/>official documentation</a>.</p><div class="row justify-content-center"><div class=col-auto><figure><img style=max-width:300px class=img-fluid src=/static-posts/2022/mdk-dongle/dongle.jpeg><figcaption style=text-align:center><small>Image 1: Makerdiary nRF52840 MDK USB Dongle - <a href=https://makerdiary.com/products/nrf52840-mdk-usb-dongle>source</a></small></figcaption></figure></div></div><div class="row justify-content-center"><div class=col-auto><figure><img class=img-fluid src=/static-posts/2022/mdk-dongle/pinout.png><figcaption style=text-align:center><small>Image 2: Pinout diagram - <a href=https://wiki.makerdiary.com/nrf52840-mdk-usb-dongle/>source</a></small></figcaption></figure></div></div><h2 id=problem>Problem</h2><p>Since the RESET/USER button is wired directly to <em>P0.18/RESET</em> pin on the nRF52840 (see image 3) it can either be programed as a GPIO
+pin or nRESET.
+By <strong>default it is set as GPIO</strong> so that the bootloader can detect the button press and start DFU mode.
+However in my case I accidentally programmed the dongle with an application that <strong>sets the pin as nRESET</strong>, this causes the dongle to reset
+(i.e. restart) when holding the button while inserting into USB instead of entering DFU mode.</p><p>The trickly detail is that setting this pin mode is <strong>stored into non-volatile memory (NVM)</strong>, specifically in the
+UICR (User Information Configuration Register) - source <a href=https://infocenter.nordicsemi.com/pdf/nRF52840_PS_v1.7.pdf>nRF52840 Product Specification v1.7</a> page 43.
+This means that when we cause a power cycle of the dongle, the pin is still configured as nRESET and in turn the bootloader will not trigger DFU mode if
+the RESET button is being held during insertion.</p><div class="row justify-content-center"><div class=col-auto><figure><img class=img-fluid src=/static-posts/2022/mdk-dongle/reset-pinout-1.png>
+<img class=img-fluid src=/static-posts/2022/mdk-dongle/reset-pinout-2.png><figcaption style=text-align:center><small>Image 3: RESET/USER button pinout - source <a href=https://infocenter.nordicsemi.com/pdf/nRF52840_PS_v1.7.pdf>nRF52840 Product Specification v1.7</a></small></figcaption></figure></div></div><h2 id=solution>Solution</h2><p>So in order to fix this we need to clear the UICR register.
+Luckily I figured that whatever I flashed actually would go into DFU mode if I pressed the button twice after being already inserted in the USB
+slot.
+This saved me a great deal of work since I wouldn&rsquo;t need to flash the SoC using J-Link / DAPLink (<a href=https://github.com/makerdiary/nrf52840-mdk-usb-dongle/issues/5>source</a>)
+but simply run an application that resets the UICR register by drag and dropping the UF2 formatted application while the dongle is in DFU mode.</p><p>Then I also found out that such an application that would reset the UICR register <a href=https://github.com/makerdiary/nrf52840-mdk-usb-dongle/issues/14>already exists</a>
+in the MDK&rsquo;s dongle Git repository
+<a href=https://github.com/makerdiary/nrf52840-mdk-usb-dongle/tree/master/examples/nrf5-sdk/pselreset_erase>pselreset_erase</a>.
+And as a bonus, there was already a <a href=https://github.com/makerdiary/nrf52840-mdk-usb-dongle/blob/master/firmware/openthread/cli/thread_cli_ftd_nrf52840_mdk_usb_dongle_v1.3.0.uf2>compiled version</a> in UF2 format.</p><p>Quickly reviewing the pselreset_erase application reveals that it clears the PSELRESET UICR register and then
+indicates to the user that it is finished by <a href=https://github.com/makerdiary/nrf52840-mdk-usb-dongle/blob/40136203035916083252595b921491eb032f2154/examples/nrf5-sdk/pselreset_erase/main.c#L152-L159>toggling the LED</a>.</p><h3 id=commands>Commands</h3><p>So to summarize in my case when using the UF2 bootloader:</p><ol><li>Enter DFU mode on the dongle (if you are lucky like me, otherwise you will need a J-Link / DAPLink)</li><li><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ sudo su -
+</span></span><span style=display:flex><span>$ lsblk
+</span></span><span style=display:flex><span>NAME         MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+</span></span><span style=display:flex><span>sda            8:0    <span style=color:#ae81ff>1</span>  3.9M  <span style=color:#ae81ff>0</span> disk 
+</span></span><span style=display:flex><span>mmcblk0      179:0    <span style=color:#ae81ff>0</span> 29.1G  <span style=color:#ae81ff>0</span> disk 
+</span></span><span style=display:flex><span>├─mmcblk0p1  179:1    <span style=color:#ae81ff>0</span>  256M  <span style=color:#ae81ff>0</span> part /boot
+</span></span><span style=display:flex><span>└─mmcblk0p2  179:2    <span style=color:#ae81ff>0</span> 28.9G  <span style=color:#ae81ff>0</span> part /
+</span></span><span style=display:flex><span>mmcblk0boot0 179:32   <span style=color:#ae81ff>0</span>    4M  <span style=color:#ae81ff>1</span> disk 
+</span></span><span style=display:flex><span>mmcblk0boot1 179:64   <span style=color:#ae81ff>0</span>    4M  <span style=color:#ae81ff>1</span> disk 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>$ mkdir /mnt/mdk/
+</span></span><span style=display:flex><span>$ mount /dev/sda /mnt/mdk
+</span></span><span style=display:flex><span>$ cp pselreset_erase_dongle.uf2 /mnt/mdk/
+</span></span><span style=display:flex><span>$ umount /mnt/mdk
+</span></span></code></pre></div></li><li>Wait for the LED lights to toggle; in my case the LED started to pulse from <em>green -> yellow -> white -> purple -> blue -> off</em> repeat.</li><li>Unplug the dongle</li><li>Enter DFU mode by holding the RESET button while inserting the dongle into the USB slot.</li></ol><p>If step 5 works, you have successfully fixed the reset button.
+You may now flash a new application onto the dongle, but be sure not to override the P0.18/RESET pin mode.</p></div></article></div></div></div><div><footer class="mt-5 bg-dark"><div class="d-flex justify-content-center p-3"><span class="text-muted mx-4">Created by: <a class=text-muted href=https://krmelj.xyz>greenstatic</a></span>
+<span class=text-muted>Copyright &copy;
+<script type=text/javascript>document.write((new Date).getFullYear())</script><noscript>2020</noscript></span></div></footer></div><script src=/dist/jquery-3.5.1.slim.min.js></script>
+<script src=/dist/bootstrap-4.5.0-dist/js/bootstrap.min.js></script>
+<script src=/js/script.js></script></body></html>
